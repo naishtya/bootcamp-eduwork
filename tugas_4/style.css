@@ -195,7 +195,7 @@ section {
 .carousel-img {
     height: 500px;
     object-fit: cover;
-    filter: brightness(70%);
+    filter: brightness(45%);
 }
 
 .carousel-caption {
