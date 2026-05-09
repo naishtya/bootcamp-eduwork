@@ -89,18 +89,14 @@ footer {
 /* MOBILE */
 /* ===================== */
 @media (max-width: 768px) {
-
     .hero-section {
         text-align: center;
     }
-
     .hero-img {
         margin-top: 30px;
         max-width: 300px;
     }
-
     .hero-text {
         margin: auto;
     }
-
 }
