@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>Naima Fashion Store</title>
+
+    <!-- Bootstrap 5 -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- ====================== -->
+    <!-- NAVBAR -->
+    <!-- ====================== -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+        <div class="container">
+
+            <a class="navbar-brand fw-bold" href="#">
+                NAIMA <span>FASHION</span>
+            </a>
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div
+                class="collapse navbar-collapse"
+                id="navbarNav"
+            >
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">
+                            Shop
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#categories">
+                            Categories
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+                <!-- ICON -->
+                <div class="d-flex align-items-center ms-lg-4 nav-icons">
+
+                    <i class="bi bi-search"></i>
+
+                    <div class="cart-icon">
+                        <i class="bi bi-cart3"></i>
+                        <span id="cart-count">0</span>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- ====================== -->
+    <!-- HERO SECTION -->
+    <!-- ====================== -->
+
+    <section id="home" class="hero-section">
+
+        <div class="container">
+
+            <div class="row align-items-center min-vh-100">
+
+                <div class="col-lg-6">
+
+                    <span class="hero-badge">
+                        NEW COLLECTION 2026
+                    </span>
+
+                    <h1 class="hero-title">
+                        Fashion Modern
+                        <span>Naima</span>
+                    </h1>
+
+                    <p class="hero-text">
+                        Temukan koleksi fashion premium dengan desain modern,
+                        elegan, dan stylish untuk menunjang penampilan terbaikmu.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="#products" class="btn btn-maroon">
+                            Shop Now
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6 text-center">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=1000&auto=format&fit=crop"
+                        alt="Fashion Hero"
+                        class="img-fluid hero-image"
+                    />
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ====================== -->
+    <!-- PROMO STRIP -->
+    <!-- ====================== -->
+
+    <section class="promo-strip">
+
+        <div class="promo-marquee">
+
+            <div class="promo-marquee-inner">
+
+                <div class="promo-item">
+                    <i class="bi bi-truck"></i>
+                    Free Shipping
+                </div>
+
+                <div class="promo-item">
+                    <i class="bi bi-percent"></i>
+                    Up To 50% OFF
+                </div>
+
+                <div class="promo-item">
+                    <i class="bi bi-credit-card"></i>
+                    Cashback Promo
+                </div>
+
+                <!-- DUPLIKAT UNTUK LOOP -->
+                <div class="promo-item">
+                    <i class="bi bi-truck"></i>
+                    Free Shipping
+                </div>
+
+                <div class="promo-item">
+                    <i class="bi bi-percent"></i>
+                    Up To 50% OFF
+                </div>
+
+                <div class="promo-item">
+                    <i class="bi bi-credit-card"></i>
+                    Cashback Promo
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ====================== -->
+    <!-- CATEGORY FILTER -->
+    <!-- ====================== -->
+
+    <section id="categories" class="py-5">
+
+        <div class="container text-center">
+
+            <h2 class="section-title">
+                Shop By Category
+            </h2>
+
+            <p class="section-subtitle">
+                Filter products by category to find your perfect style.
+            </p>
+
+            <!-- SEARCH -->
+            <div class="search-box mx-auto">
+
+                <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Search product..."
+                    id="search-input"
+                />
+
+            </div>
+
+            <!-- FILTER BUTTON -->
+            <div class="filter-buttons mt-4">
+
+                <button
+                    class="btn filter-btn active"
+                    data-category="All"
+                >
+                    All
+                </button>
+
+                <button
+                    class="btn filter-btn"
+                    data-category="Women"
+                >
+                    Women
+                </button>
+
+                <button
+                    class="btn filter-btn"
+                    data-category="Men"
+                >
+                    Men
+                </button>
+
+                <button
+                    class="btn filter-btn"
+                    data-category="Accessories"
+                >
+                    Accessories
+                </button>
+
+                <button
+                    class="btn filter-btn"
+                    data-category="Shoes"
+                >
+                    Shoes
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ====================== -->
+    <!-- PRODUCT SECTION -->
+    <!-- ====================== -->
+
+    <section id="products" class="pb-5">
+
+        <div class="container">
+
+            <div class="row g-4" id="product-list">
+
+                <!-- PRODUCT FROM JAVASCRIPT -->
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ====================== -->
+    <!-- MODAL -->
+    <!-- ====================== -->
+
+    <div
+        class="modal fade"
+        id="productModal"
+        tabindex="-1"
+    >
+
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+
+            <div class="modal-content">
+
+                <div class="modal-body">
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+
+                            <img
+                                id="modal-image"
+                                class="img-fluid rounded"
+                                alt=""
+                            />
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <span
+                                class="badge bg-danger mb-2"
+                                id="modal-category"
+                            >
+                            </span>
+
+                            <h3 id="modal-title"></h3>
+
+                            <h4 class="text-danger fw-bold mb-3">
+                                Rp <span id="modal-price"></span>
+                            </h4>
+
+                            <p id="modal-description"></p>
+
+                            <button
+                                class="btn btn-maroon w-100"
+                                id="add-to-cart-btn"
+                            >
+                                Add To Cart
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ====================== -->
+    <!-- FOOTER -->
+    <!-- ====================== -->
+
+    <footer id="contact" class="footer-section">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-4 mb-4">
+
+                    <h4 class="footer-logo">
+                        NAIMA FASHION
+                    </h4>
+
+                    <p>
+                        Fashion modern premium dengan desain elegan dan kualitas terbaik.
+                    </p>
+
+                </div>
+
+                <div class="col-lg-4 mb-4">
+
+                    <h5>Contact</h5>
+
+                    <p>Email: naimafashion@gmail.com</p>
+                    <p>Instagram: @naimafashion</p>
+
+                </div>
+
+                <div class="col-lg-4 mb-4">
+
+                    <h5>Payment</h5>
+
+                    <p>QRIS, E-Wallet, Virtual Account, Transfer Bank, Kartu Kredit & Debit, Paylater, COD</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
