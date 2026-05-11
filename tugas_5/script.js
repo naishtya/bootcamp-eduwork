@@ -240,6 +240,12 @@ function addModalEvents() {
                 document.getElementById("cart-count").innerText =
                     cartCount;
 
+                // MASUKKAN KE CART
+                cartItems.push(selectedProduct);
+
+                // UPDATE UI
+                updateCartUI();
+
                 alert(`${selectedProduct.name} added to cart!`);
             };
 
@@ -247,4 +253,67 @@ function addModalEvents() {
 
     });
 
+}
+
+// ======================
+// SEARCH BUTTON
+// ======================
+
+const searchBtn = document.getElementById("search-btn");
+
+searchBtn.addEventListener("click", () => {
+
+    document
+        .getElementById("search-input")
+        .focus();
+
+});
+
+// ======================
+// CART DROPDOWN
+// ======================
+
+const cartBtn = document.getElementById("cart-btn");
+const cartDropdown = document.getElementById("cart-dropdown");
+
+cartBtn.addEventListener("click", () => {
+
+    cartDropdown.classList.toggle("show");
+
+});
+
+// ======================
+// CART DATA
+// ======================
+
+const cartItems = [];
+
+// UPDATE CART UI
+
+function updateCartUI() {
+
+    const cartItemsElement =
+        document.getElementById("cart-items");
+
+    cartItemsElement.innerHTML = "";
+
+    if (cartItems.length === 0) {
+
+        cartItemsElement.innerHTML = `
+            <li class="empty-cart">
+                Cart is empty
+            </li>
+        `;
+
+        return;
+    }
+
+    cartItems.forEach((item) => {
+
+        cartItemsElement.innerHTML += `
+            <li>
+                ${item.name}
+            </li>
+        `;
+    });
 }

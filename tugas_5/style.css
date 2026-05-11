@@ -68,6 +68,88 @@ body {
 }
 
 /* ====================== */
+/* NAV ICONS */
+/* ====================== */
+
+.icon-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.icon-btn:hover {
+    color: #ffb3b3;
+    transform: scale(1.1);
+}
+
+.cart-wrapper {
+    position: relative;
+}
+
+#cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #b20e1f;
+    color: white;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+/* CART DROPDOWN */
+
+.cart-dropdown {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 280px;
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    display: none;
+    z-index: 999;
+}
+
+.cart-dropdown.show {
+    display: block;
+}
+
+.cart-dropdown h6 {
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #111;
+}
+
+#cart-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#cart-items li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    color: #333;
+    font-size: 14px;
+}
+
+.empty-cart {
+    text-align: center;
+    color: gray;
+}
+
+/* ====================== */
 /* HERO */
 /* ====================== */
 
