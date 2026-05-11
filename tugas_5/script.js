@@ -9,7 +9,7 @@ const products = [
         name: "Elegant Dress",
         category: "Women",
         price: 450000,
-        description: "Dress elegan premium untuk acara formal dan casual.",
+        description: "Premium elegant dress for formal and casual events.",
         image: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1000&auto=format&fit=crop",
         badge: "NEW"
     },
@@ -19,7 +19,7 @@ const products = [
         name: "Casual Blazer",
         category: "Men",
         price: 650000,
-        description: "Blazer modern dengan desain stylish dan elegan.",
+        description: "Modern blazer with stylish and elegant design.",
         image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1000&auto=format&fit=crop",
         badge: "HOT"
     },
@@ -29,37 +29,37 @@ const products = [
         name: "Luxury Handbag",
         category: "Accessories",
         price: 550000,
-        description: "Tas wanita premium dengan desain modern.",
+        description: "Premium women's bag with modern design.",
         image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=1000&auto=format&fit=crop",
         badge: "SALE"
     },
 
     {
         id: 4,
-        name: "White Sneakers",
+        name: "Red Sneakers",
         category: "Shoes",
         price: 700000,
-        description: "Sneakers trendy dan nyaman digunakan sehari-hari.",
+        description: "Trendy sneakers for daily use.",
         image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1000&auto=format&fit=crop",
         badge: "NEW"
     },
 
     {
         id: 5,
-        name: "Oversized Hoodie",
+        name: "T-shirt",
         category: "Men",
         price: 320000,
-        description: "Hoodie fashion modern dengan bahan premium.",
+        description: "Modern t-shirt with premium material.",
         image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1000&auto=format&fit=crop",
         badge: "HOT"
     },
 
     {
         id: 6,
-        name: "Minimalist Heels",
+        name: "Heels",
         category: "Shoes",
         price: 480000,
-        description: "High heels elegan dengan desain minimalis modern.",
+        description: "Elegant high heels with a modern minimalist design.",
         image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=1000&auto=format&fit=crop",
         badge: "SALE"
     }
@@ -235,16 +235,31 @@ function addModalEvents() {
 
             addToCartBtn.onclick = () => {
 
-                cartCount++;
+                // CEK APAKAH PRODUK SUDAH ADA
+                const existingProduct = cartItems.find((item) => {
+                    return item.id === selectedProduct.id;
+                });
 
-                document.getElementById("cart-count").innerText =
-                    cartCount;
+                // JIKA SUDAH ADA
+                if (existingProduct) {
 
-                // MASUKKAN KE CART
-                cartItems.push(selectedProduct);
+                    existingProduct.quantity++;
+
+                }
+
+                // JIKA BELUM ADA
+                else {
+
+                    cartItems.push({
+                        ...selectedProduct,
+                        quantity: 1
+                    });
+                }
 
                 // UPDATE UI
                 updateCartUI();
+
+                updateCartCount();
 
                 alert(`${selectedProduct.name} added to cart!`);
             };
@@ -286,34 +301,185 @@ cartBtn.addEventListener("click", () => {
 // CART DATA
 // ======================
 
+// ======================
+// CART DATA
+// ======================
+
 const cartItems = [];
 
+// ======================
 // UPDATE CART UI
+// ======================
 
 function updateCartUI() {
 
     const cartItemsElement =
         document.getElementById("cart-items");
 
+    const cartTotal =
+        document.getElementById("cart-total");
+
     cartItemsElement.innerHTML = "";
+
+    // EMPTY CART
 
     if (cartItems.length === 0) {
 
         cartItemsElement.innerHTML = `
-            <li class="empty-cart">
+            <div class="empty-cart">
                 Cart is empty
-            </li>
+            </div>
         `;
+
+        cartTotal.innerText = "Rp 0";
 
         return;
     }
 
-    cartItems.forEach((item) => {
+    let total = 0;
+
+    // LOOP CART
+
+    cartItems.forEach((item, index) => {
+
+        total += item.price * item.quantity;
 
         cartItemsElement.innerHTML += `
-            <li>
-                ${item.name}
-            </li>
+
+        <div class="cart-item">
+
+            <div class="cart-item-info">
+
+                <h6>
+                    ${item.name}
+                </h6>
+
+                <div class="cart-item-price">
+                    Rp ${(item.price * item.quantity)
+                        .toLocaleString("id-ID")}
+                </div>
+
+                <!-- QUANTITY -->
+                <div class="cart-actions">
+
+                    <button
+                        class="qty-btn minus-btn"
+                        data-index="${index}"
+                    >
+                        -
+                    </button>
+
+                    <span class="qty-number">
+                        ${item.quantity}
+                    </span>
+
+                    <button
+                        class="qty-btn plus-btn"
+                        data-index="${index}"
+                    >
+                        +
+                    </button>
+
+                    <!-- DELETE -->
+                    <button
+                        class="delete-btn"
+                        data-index="${index}"
+                    >
+                        <i class="bi bi-trash"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
         `;
     });
+
+    // TOTAL
+
+    cartTotal.innerText =
+        `Rp ${total.toLocaleString("id-ID")}`;
+
+    // ======================
+    // PLUS BUTTON
+    // ======================
+
+    document.querySelectorAll(".plus-btn")
+        .forEach((button) => {
+
+        button.addEventListener("click", () => {
+
+            const index =
+                button.dataset.index;
+
+            cartItems[index].quantity++;
+
+            updateCartUI();
+        });
+    });
+
+    // ======================
+    // MINUS BUTTON
+    // ======================
+
+    document.querySelectorAll(".minus-btn")
+        .forEach((button) => {
+
+        button.addEventListener("click", () => {
+
+            const index =
+                button.dataset.index;
+
+            cartItems[index].quantity--;
+
+            // HAPUS JIKA 0
+            if (cartItems[index].quantity <= 0) {
+
+                cartItems.splice(index, 1);
+            }
+
+            updateCartUI();
+
+            updateCartCount();
+        });
+    });
+
+    // ======================
+    // DELETE BUTTON
+    // ======================
+
+    document.querySelectorAll(".delete-btn")
+        .forEach((button) => {
+
+        button.addEventListener("click", () => {
+
+            const index =
+                button.dataset.index;
+
+            cartItems.splice(index, 1);
+
+            updateCartUI();
+
+            updateCartCount();
+        });
+    });
+}
+
+// ======================
+// UPDATE CART COUNT
+// ======================
+
+function updateCartCount() {
+
+    let totalQty = 0;
+
+    cartItems.forEach((item) => {
+
+        totalQty += item.quantity;
+    });
+
+    document.getElementById("cart-count")
+        .innerText = totalQty;
 }
