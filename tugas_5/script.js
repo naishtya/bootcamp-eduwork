@@ -479,3 +479,4 @@ function updateCartCount() {
     document.getElementById("cart-count")
         .innerText = totalQty;
 }
+
