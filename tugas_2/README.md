@@ -1,0 +1,1 @@
+Pada tugas ini saya mempelajari CSS untuk mempercantik tampilan website. Saya menerapkan styling seperti warna, typography, spacing, border, dan layout agar halaman web terlihat lebih rapi dan menarik. Selain itu saya juga belajar memanfaatkan AI untuk membantu proses styling dan desain antarmuka website.

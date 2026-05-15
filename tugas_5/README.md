@@ -1,0 +1,1 @@
+Pada tugas ini saya mempelajari dasar-dasar JavaScript untuk menambahkan interaksi pada website. Saya menggunakan variabel, function, conditional, looping, dan DOM manipulation untuk membuat fitur interaktif sederhana. Saya juga memanfaatkan AI untuk membantu memahami logika dan penulisan kode JavaScript.

@@ -1,0 +1,1 @@
+Pada tugas ini saya mempelajari fundamental web development, penggunaan GIT, serta dasar HTML dengan bantuan AI. Saya belajar membuat struktur halaman web menggunakan elemen HTML seperti heading, paragraph, image, link, dan list, serta memahami penggunaan Git dan GitHub untuk version control dan pengumpulan tugas.

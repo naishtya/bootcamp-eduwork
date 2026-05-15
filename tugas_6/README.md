@@ -1,0 +1,1 @@
+Pada tugas ini saya mempelajari dasar pengelolaan database menggunakan MySQL. Saya membuat database, tabel, serta menjalankan query seperti INSERT, SELECT, UPDATE, dan DELETE untuk mengelola data. Tugas ini membantu memahami bagaimana data disimpan dan digunakan dalam aplikasi web.

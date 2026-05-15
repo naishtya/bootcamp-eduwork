@@ -1,0 +1,1 @@
+Pada tugas ini saya mempelajari dasar PHP dan implementasinya pada website dinamis. Saya membuat fitur CRUD (Create, Read, Update, Delete) menggunakan PHP yang terhubung dengan database MySQL. Selain itu saya belajar koneksi database, pengolahan form, dan pengelolaan data menggunakan bantuan AI dalam proses pengembangan.

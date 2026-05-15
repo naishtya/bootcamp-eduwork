@@ -1,0 +1,1 @@
+Pada tugas ini saya membuat website personal profile sebagai latihan menggabungkan HTML, CSS, dan Bootstrap. Halaman yang dibuat berisi informasi profil, foto, deskripsi diri, serta tampilan yang lebih menarik dan responsive. Tugas ini membantu memahami struktur pembuatan website sederhana secara utuh.

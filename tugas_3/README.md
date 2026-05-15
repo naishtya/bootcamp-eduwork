@@ -1,0 +1,1 @@
+Pada tugas ini saya mempelajari framework Bootstrap untuk membuat website responsive dengan lebih cepat dan efisien. Saya menggunakan grid system, navbar, button, card, dan komponen Bootstrap lainnya agar tampilan website dapat menyesuaikan berbagai ukuran layar seperti desktop maupun mobile.
